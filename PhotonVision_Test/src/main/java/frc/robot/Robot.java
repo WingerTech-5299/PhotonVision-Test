@@ -6,16 +6,14 @@ package frc.robot;
 
 import java.util.List;
 
+import javax.xml.namespace.QName;
+
 import org.photonvision.PhotonCamera;
-import org.photonvision.targeting.PhotonPipelineResult;
 import org.photonvision.targeting.PhotonTrackedTarget;
 
-import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpiutil.net.PortForwarder;
-
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -51,8 +49,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic(
-
-      PortForwarder.add(5800, "10.52.99.94", 5800);
 
   ) {
   }
@@ -103,6 +99,10 @@ public class Robot extends TimedRobot {
     boolean hasTarget = result.hasTargets();
     List<PhotonTrackedTarget> targets = result.getTargets();
     double latency = result.getLatencyMillis();
+
+    System.out.print(targets);
+    System.out.print(latency);
+    System.out.print(hasTarget);
 
   }
 
